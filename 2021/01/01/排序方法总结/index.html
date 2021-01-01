@@ -6,14 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives | Hexo</title>
+  <title>12种排序方法总结 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/index.html">
+  <meta name="description" content="C++实现（代码待补充，转载整合）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="12种排序方法总结">
+<meta property="og:url" content="http://example.com/2021/01/01/%E6%8E%92%E5%BA%8F%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="C++实现（代码待补充，转载整合）">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-01-01T05:30:39.007Z">
+<meta property="article:modified_time" content="2020-01-12T09:26:37.675Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="C++">
+<meta property="article:tag" content="leetcode">
+<meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -150,433 +157,199 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-排序方法总结" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/01/01/%E5%93%88%E5%B8%8C%E8%A1%A8%E7%9A%84%E7%9B%B8%E5%85%B3%E5%8E%9F%E7%90%86%E5%8F%8ASTL--unordered_map/" class="archive-article-date">
-  	<time datetime="2021-01-01T05:30:39.058Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-01</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/01/01/%E5%93%88%E5%B8%8C%E8%A1%A8%E7%9A%84%E7%9B%B8%E5%85%B3%E5%8E%9F%E7%90%86%E5%8F%8ASTL--unordered_map/">哈希表的相关原理及STL--unordered_map</a>
+    <h1 class="article-title" itemprop="name">
+      12种排序方法总结
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2021/01/01/%E6%8E%92%E5%BA%8F%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/" class="archive-article-date">
+  	<time datetime="2021-01-01T05:30:39.007Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>C++实现<br>（代码待补充，转载整合）</p>
+<a id="more"></a> 
+<p>leetcode相关题目待补充</p>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="排序方法介绍"><a href="#排序方法介绍" class="headerlink" title="排序方法介绍"></a>排序方法介绍</h2><p>排序方法分为两种：比较排序(9种)与非比较排序(3种)，下面将逐一介绍</p>
+<h2 id="比较排序："><a href="#比较排序：" class="headerlink" title="比较排序："></a>比较排序：</h2><h3 id="1-冒泡排序："><a href="#1-冒泡排序：" class="headerlink" title="1.冒泡排序："></a>1.冒泡排序：</h3><p>方法：1. 设数组末位为后停止位。<br>      2. 从数组首位开始比较相邻的两个元素，如果后者比前者大则交换位置。<br>      3. 重复比较，第一步结束后，后停止位处的元素即为此轮最大元素。<br>      4. 后停止位前移一位。<br>      5. 重复步骤2~4，直至排序完成。<br>最好复杂度:O(n)<br>最坏复杂度:O(n²)<br>平均复杂度:O(n²)<br>空间复杂度:O(1)<br>稳定性：稳定</p>
+<h3 id="2-鸡尾酒排序-双向冒泡排序-："><a href="#2-鸡尾酒排序-双向冒泡排序-：" class="headerlink" title="2.鸡尾酒排序(双向冒泡排序)："></a>2.鸡尾酒排序(双向冒泡排序)：</h3><p>方法：1. 设数组首位为前停止位，数组末位为后停止位。<br>      2. 从前停止位开始比较相邻的两个元素，如果后者比前者大则交换位置。<br>      3. 重复比较，第一步结束后，后停止位处的元素即为此轮最大元素。<br>      4. 后停止位前移一位。<br>      5. 从后停止位开始比较相邻的两个元素，如果前者比后者大则交换位置。<br>      6. 前停止位后移一位。<br>      7. 重复步骤2~6，直至排序完成。<br>最好复杂度:O(n)<br>最坏复杂度:O(n²)<br>平均复杂度:O(n²)<br>空间复杂度:O(1)<br>稳定性: 稳定</p>
+<h3 id="3-选择排序："><a href="#3-选择排序：" class="headerlink" title="3.选择排序："></a>3.选择排序：</h3><p>方法：1. 设数组首位为前停止位(数组末位为后停止位)。<br>      2. 遍历数组，记录最大(小)值的位置。<br>      3. 与首(末)位进行交换。<br>      4. 移动停止位。<br>      5. 重复步骤2~4，直至排序完成。<br>最好复杂度:O(n²)<br>最坏复杂度:O(n²)<br>平均复杂度:O(n²)<br>空间复杂度:O(1)<br>稳定性:不稳定</p>
+<h3 id="4-插入排序："><a href="#4-插入排序：" class="headerlink" title="4.插入排序："></a>4.插入排序：</h3><p>方法：1. 从数组首位开始，认为该元素已经被排序。<br>      2. 取出未排序部分的第一个元素(待插入元素)，在已排序的元素序列中从后向前扫描。<br>      3. 如果ai大于待插入元素aj，将ai移到ai+1的位置；否则，使ai+1=aj。<br>      4. 重复步骤2~3，直至排序完成。<br>最好复杂度:O(n)<br>最坏复杂度:O(n²)<br>平均复杂度:O(n²)<br>空间复杂度:O(1)<br>稳定性:稳定      </p>
+<h3 id="5-二分插入排序："><a href="#5-二分插入排序：" class="headerlink" title="5.二分插入排序："></a>5.二分插入排序：</h3><p>方法：1. 从数组首位开始，认为该元素已经被排序。<br>      2. 取出未排序部分的第一个元素(待插入元素)，运用二分查找扫描。<br>      3. 如果ai大于待插入元素aj，将ai移到ai+1的位置；否则，使ai+1=aj。<br>      4. 重复步骤2~3，直至排序完成。<br>最好复杂度:O(nlogn)<br>最坏复杂度:O(n²)<br>平均复杂度:O(n²)<br>空间复杂度:O(1)<br>稳定性:稳定</p>
+<h3 id="6-希尔排序-递减增量排序算法-："><a href="#6-希尔排序-递减增量排序算法-：" class="headerlink" title="6.希尔排序(递减增量排序算法)："></a>6.希尔排序(递减增量排序算法)：</h3><p>方法：1. 设定增量为数组长度的一半<br>      2. 从第一个元素开始进行分组，组内元素的间隔为增量。<br>      3. 组内进行插入排序。<br>      4. 增量/=2。<br>      5. 重复步骤2<del>4，直至排序完成。<br>最好复杂度:O(n)<br>最坏复杂度:O(nlogn)<br>平均复杂度:O(n^(1.3</del>2))<br>空间复杂度:O(1)<br>稳定性 :不稳定</p>
+<h3 id="7-归并排序："><a href="#7-归并排序：" class="headerlink" title="7.归并排序："></a>7.归并排序：</h3><p>方法：1. 将数组一分为二，并不断细分，直到所有部分均只有一个元素。<br>      2. 按照步骤一的划分方式合二为一，直至排序完成，具体合并步骤如下：<br>            1. 申请一个长度为两部分之和的数组temp。<br>            2. 比较两部分的首元素，将较小的元素复制到temp首位。<br>            3. 将该元素部分的指针后移一位，将temp指针后移一位。<br>            4. 重复步骤2~3，若某部分指针已空，将另一部分的剩余元素复制到temp即可，合并完成。<br>最好复杂度:O(nlogn)<br>最坏复杂度:O(nlogn)<br>平均复杂度:O(nlogn)<br>空间复杂度:O(n)<br>稳定性:稳定</p>
+<h3 id="8-堆排序："><a href="#8-堆排序：" class="headerlink" title="8.堆排序："></a>8.堆排序：</h3><p>(算法导论第6章，84页)<br>方法：1. 将数组转换为最大堆<br>      2. 将根节点(最大值)与堆尾元素互换<br>      3. 除去堆尾元素，重新构成最大堆<br>      4. 重复步骤2~4，直至排序完成。<br>最好复杂度:O(nlogn)<br>最坏复杂度:O(nlogn)<br>平均复杂度:O(nlogn)<br>空间复杂度:O(1)<br>稳定性:不稳定</p>
+<h3 id="9-快速排序："><a href="#9-快速排序：" class="headerlink" title="9.快速排序："></a>9.快速排序：</h3><p>(算法导论第7章，95页)<br>方法：1. 从序列中挑出一个元素，作为基准元素(通常为n/2)。<br>      2. 逐一判断元素，比基准值小则放在基准元素前，反之则放在基准元素后。<br>      3. 基准值前后两部分分别选取新基准元素。<br>      4. 重复步骤2~3，直到所有区域最多只有一个元素。<br>最好复杂度:O(nlogn)<br>最坏复杂度:O(n²)<br>平均复杂度:O(nlogn)<br>空间复杂度:O(log₂n)<br>稳定性:不稳定</p>
+<h2 id="非比较排序-线性时间排序-："><a href="#非比较排序-线性时间排序-：" class="headerlink" title="非比较排序(线性时间排序)："></a>非比较排序(线性时间排序)：</h2><h3 id="10-计数排序："><a href="#10-计数排序：" class="headerlink" title="10.计数排序："></a>10.计数排序：</h3><p>(算法导论第8章，108页)<br>方法：1. 从数组A首位开始，逐一检查元素，使C[A[i]]+=1。(统计A[i]的个数)<br>      2. 从c[0]开始，使c[i]=∑c<a href="0%3C=j%3Ci">j</a>。(统计比A[i]小的个数)<br>      3. 从数组A末位开始：B[C[A[i]]]=A[i],C[A[i]]-=1。<br>最好复杂度:O(n+k)   n个数从  0-k的范围  类似于桶排序<br>最坏复杂度:O(n+k)<br>平均复杂度:O(n+k)<br>空间复杂度:O(n)<br>稳定性:稳定</p>
+<h3 id="11-基数排序："><a href="#11-基数排序：" class="headerlink" title="11.基数排序："></a>11.基数排序：</h3><p>(算法导论第8章，110页)<br>方法：该方法仅用于数字排序，从最低位开始进行当前一位数的排序，直至排序完成。<br>最好复杂度:O(n*k) n是排序元素个数，k是数字位数。<br>最坏复杂度:O(n*k)<br>平均复杂度:O(n*k)<br>空间复杂度:O(n+r)   r是桶的个数<br>稳定性:稳定(取决于一位数的排序方式是否稳定)</p>
+<h3 id="12-桶排序："><a href="#12-桶排序：" class="headerlink" title="12.桶排序："></a>12.桶排序：</h3><p>(算法导论第8章，112页)<br>方法：与哈希表类似，但哈希函数需满足各个桶之间有绝对的大小关系，然后在各个桶中进行插入排序即可。<br>最好复杂度:O(n)<br>最坏复杂度:O(n)<br>平均复杂度:O(n)<br>空间复杂度:O(n)<br>稳定性:稳定(取决于桶内插入排序是否稳定)</p>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/eniac12/p/5329396.html">cnblogs</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42166409/article/details/81516090">csdn</a></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">STL</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
         		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/01/01/%E5%85%B3%E4%BA%8E%E6%8C%87%E9%92%88%E5%B8%B8%E9%87%8F%E4%B8%8E%E5%B8%B8%E9%87%8F%E6%8C%87%E9%92%88/" class="archive-article-date">
-  	<time datetime="2021-01-01T05:30:39.054Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/01/01/%E5%85%B3%E4%BA%8E%E6%8C%87%E9%92%88%E5%B8%B8%E9%87%8F%E4%B8%8E%E5%B8%B8%E9%87%8F%E6%8C%87%E9%92%88/">关于指针的常量以及常成员函数</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/01/01/%E5%85%B3%E4%BA%8E%E6%A8%A1%E6%9D%BF%E5%87%BD%E6%95%B0%E4%B8%AD%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%BD%9C%E4%B8%BA%E5%BD%A2%E5%8F%82%E7%9A%84%E6%83%85%E5%86%B5/" class="archive-article-date">
-  	<time datetime="2021-01-01T05:30:39.052Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/01/01/%E5%85%B3%E4%BA%8E%E6%A8%A1%E6%9D%BF%E5%87%BD%E6%95%B0%E4%B8%AD%E8%BF%AD%E4%BB%A3%E5%99%A8%E4%BD%9C%E4%B8%BA%E5%BD%A2%E5%8F%82%E7%9A%84%E6%83%85%E5%86%B5/">关于模板函数中迭代器作为形参的情况</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数据结构课后题</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/01/01/%E6%8E%92%E5%BA%8F%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/01/01/%E5%88%86%E6%94%AF%E5%AE%9A%E7%95%8C%E6%B3%95%E8%A7%A3%E5%86%B3%E5%A4%9A%E7%BB%B4%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2021-01-01T05:30:39.050Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-01</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2021/01/01/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          如何创建动态数组
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/01/01/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C(CNN)%E5%B8%B8%E7%94%A8%E6%A8%A1%E5%9E%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">卷积神经网络(CNN)常用模型</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/01/01/%E5%88%86%E6%94%AF%E5%AE%9A%E7%95%8C%E6%B3%95%E8%A7%A3%E5%86%B3%E5%A4%9A%E7%BB%B4%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">分支定界法解决多维背包问题</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/01/01/%E5%A4%9A%E7%BB%B4%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2021-01-01T05:30:39.048Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/01/01/%E5%A4%9A%E7%BB%B4%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">多维背包问题</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/01/01/Tensorflow2.0%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0%E4%B8%8E%E7%A4%BA%E4%BE%8B/" class="archive-article-date">
-  	<time datetime="2021-01-01T05:30:39.046Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/01/01/Tensorflow2.0%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0%E4%B8%8E%E7%A4%BA%E4%BE%8B/">Tensorflow2.0常用函数与示例</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Tensorflow</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/01/01/STL%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0%E6%95%B4%E7%90%86/" class="archive-article-date">
-  	<time datetime="2021-01-01T05:30:39.044Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/01/01/STL%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0%E6%95%B4%E7%90%86/">STL常用函数整理</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">STL</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/01/01/SGF%E6%96%87%E4%BB%B6%E8%A7%A3%E8%AF%BB(%E8%BD%AC%E8%BD%BD)/" class="archive-article-date">
-  	<time datetime="2021-01-01T05:30:39.040Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/01/01/SGF%E6%96%87%E4%BB%B6%E8%A7%A3%E8%AF%BB(%E8%BD%AC%E8%BD%BD)/">SGF文件解读(转载)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/01/01/PIL%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0%E4%B8%8E%E7%A4%BA%E4%BE%8B/" class="archive-article-date">
-  	<time datetime="2021-01-01T05:30:39.038Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/01/01/PIL%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0%E4%B8%8E%E7%A4%BA%E4%BE%8B/">PIL常用函数与示例</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PIL</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/01/01/Pandas%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0%E4%B8%8E%E7%A4%BA%E4%BE%8B/" class="archive-article-date">
-  	<time datetime="2021-01-01T05:30:39.036Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/01/01/Pandas%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0%E4%B8%8E%E7%A4%BA%E4%BE%8B/">Pandas常用函数与示例</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Pandas</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -600,8 +373,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
