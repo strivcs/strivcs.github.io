@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>SGF文件解读(转载) | strivcs</title>
+  <title>如何创建动态数组 | strivcs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="SGF文件解读">
+  <meta name="description" content="令人头疼的高维动态数组指针（代码已验证，原创）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SGF文件解读(转载)">
-<meta property="og:url" content="http://example.com/2021/01/01/SGF%E6%96%87%E4%BB%B6%E8%A7%A3%E8%AF%BB(%E8%BD%AC%E8%BD%BD)/index.html">
+<meta property="og:title" content="如何创建动态数组">
+<meta property="og:url" content="http://example.com/2019/10/25/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84/index.html">
 <meta property="og:site_name" content="strivcs">
-<meta property="og:description" content="SGF文件解读">
+<meta property="og:description" content="令人头疼的高维动态数组指针（代码已验证，原创）">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-01-01T05:30:39.040Z">
-<meta property="article:modified_time" content="2020-04-05T07:00:33.530Z">
+<meta property="article:published_time" content="2019-10-25T08:25:00.000Z">
+<meta property="article:modified_time" content="2021-03-26T06:47:07.360Z">
 <meta property="article:author" content="strivcs">
-<meta property="article:tag" content="随笔">
+<meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="strivcs" type="application/atom+xml">
@@ -149,28 +149,59 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-SGF文件解读(转载)" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-如何创建动态数组" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      SGF文件解读(转载)
+      如何创建动态数组
     </h1>
   
 
         
-        <a href="/2021/01/01/SGF%E6%96%87%E4%BB%B6%E8%A7%A3%E8%AF%BB(%E8%BD%AC%E8%BD%BD)/" class="archive-article-date">
-  	<time datetime="2021-01-01T05:30:39.040Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-01</time>
+        <a href="/2019/10/25/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84/" class="archive-article-date">
+  	<time datetime="2019-10-25T08:25:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/wanfan/article/details/83329368">SGF文件解读</a></p>
+        <p>令人头疼的高维动态数组指针<br>（代码已验证，原创）</p>
+<a id="more"></a> 
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h3><p>第一步：定义一个一维指针</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int *b;</span><br></pre></td></tr></table></figure>
+<p>第二步：为其分配内存</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b = new int[ROWS];</span><br></pre></td></tr></table></figure>
+<p>第三步：为其赋值</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (int i = 0; i &lt; ROWS; i++)</span><br><span class="line">&#123;</span><br><span class="line">	b[i] = VALUE;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>容易忽略的第四步</strong>：使用完毕后一定要删除内存</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">template&lt;class T&gt;</span><br><span class="line">void delete1dArray(T * &amp;x)</span><br><span class="line">&#123;</span><br><span class="line">	delete[] x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>关键的第五步</strong>：创建一个模板函数<strong>changeLength1D</strong>，该函数用来更改数组指针的有效长度，并为其分配新的内存。（函数利用了引用类型，首先根据用户需要（新长度）创建一个满足要求的新数组，然后将原数组拷贝到新数组，删除掉原内存后将引用数组指向新创建的数组，从而达到目的）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">template&lt;class T&gt;</span><br><span class="line">void changeLength1D(T *&amp;a, int oldLength, int newLength)</span><br><span class="line">&#123;</span><br><span class="line">	T *b;</span><br><span class="line">	b= new T [newLength];</span><br><span class="line">	int len = (newLength &lt; oldLength ? newLength : oldLength);</span><br><span class="line">	<span class="keyword">for</span> (int i = 0; i &lt; len; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		b[i] = a[i];</span><br><span class="line">	&#125;</span><br><span class="line">	delete1dArray(a);</span><br><span class="line">	a = b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>至此，一维（动态数组）指针创建完毕，下面是代码部分：</p>
+<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><p>主文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include&lt;iostream&gt;</span></span><br><span class="line"><span class="comment">#include&quot;1.h&quot;</span></span><br><span class="line">const int ROWS = 10;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	using namespace std;</span><br><span class="line">	int *b;</span><br><span class="line">	b = new int[ROWS];</span><br><span class="line">	<span class="keyword">for</span> (int i = 0; i &lt; ROWS; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		b[i] = i;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; <span class="string">b[3] &lt;&lt;&quot; &quot;&lt;&lt; b</span>[8] &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; <span class="string">b[9] &lt;&lt; endl;</span></span><br><span class="line"><span class="string">	changeLength1D(b</span>, ROWS, 9);</span><br><span class="line">	cout &lt;&lt; <span class="string">b[3] &lt;&lt; &quot; &quot; &lt;&lt; b</span>[8] &lt;&lt; <span class="string">endl&lt;&lt; endl</span>;</span><br><span class="line">	//cout &lt;&lt; <span class="string">b[9] &lt;&lt; endl;报错/空指针对应的值，用来验证</span></span><br><span class="line"><span class="string">	system(&quot;pause&quot;);</span></span><br><span class="line"><span class="string">	return 0;</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>头文件：1.h</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">template&lt;class T&gt;</span><br><span class="line">void delete1dArray(T * &amp;x)</span><br><span class="line">&#123;</span><br><span class="line">	delete[] x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">template&lt;class T&gt;</span><br><span class="line">void changeLength1D(T *&amp;a, int oldLength, int newLength)</span><br><span class="line">&#123;</span><br><span class="line">	T *b;</span><br><span class="line">	b = new T[newLength];</span><br><span class="line">	int len = (newLength &lt; oldLength ? newLength : oldLength);</span><br><span class="line">	<span class="keyword">for</span> (int i = 0; i &lt; len; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		b[i] = a[i];</span><br><span class="line">	&#125;</span><br><span class="line">	delete1dArray(a);</span><br><span class="line">	a = b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h3><p>第一步：定义一个二维指针</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int **c;</span><br></pre></td></tr></table></figure>
+<p>第二步：为其分配内存（先指向一个指针数组，再为指针数组分配内存）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">c = new int *[ROWS];</span><br><span class="line"><span class="keyword">for</span> (int i = 0; i &lt; ROWS; i++)</span><br><span class="line">&#123;</span><br><span class="line">	c[i] = new int[SIZE];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第三步：为其赋值</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (int i = 0; i &lt; ROWS; i++)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">for</span> (int j = 0; j &lt; SIZE; j++)</span><br><span class="line">	&#123;</span><br><span class="line">		*(*(c + i) + j) = i + j;</span><br><span class="line">		//c[i][j] = i + j;//两种赋值方式均可</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第四步：删除内存，二维指针也要按照创建时的方式进行删除，先删除指针数组的内存，再删除二维指针的内存（这部分代码可以引用<strong>delete1dArray</strong>函数进行简化）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">template&lt;class T&gt;</span><br><span class="line">void delete2dArray(T ** &amp;x, int numberOfRows)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">for</span> (int i = 0; i &lt; numberOfRows; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		delete[] x[i];</span><br><span class="line">	&#125;</span><br><span class="line">	delete[] x;</span><br><span class="line">	x = NULL;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第五步：同一维指针，创建模板函数<strong>changeLength2D</strong>（结合第二步和第四步的创建删除方式，这部分代码也可以引用一维指针的函数，但是可能会更麻烦）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">template&lt;class T&gt;</span><br><span class="line">void changeLength2D(T ** &amp;a, int oldLengthR, int oldLengthS, int newLengthR, int newLengthS)</span><br><span class="line">&#123;</span><br><span class="line">	T **b;</span><br><span class="line">	b = new T *[newLengthR];</span><br><span class="line">	<span class="keyword">for</span> (int i = 0; i &lt; newLengthR; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		b[i] = new T [newLengthS];</span><br><span class="line">	&#125;</span><br><span class="line">	int Rows= (newLengthR &lt; oldLengthR ? newLengthR : oldLengthR);</span><br><span class="line">	int Size= (newLengthS &lt; oldLengthS ? newLengthS : oldLengthS);</span><br><span class="line">	<span class="keyword">for</span> (int i = 0; i &lt; Rows; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (int j = 0; j &lt; Size; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			b[i][j] = a[i][j];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	delete2dArray(a, oldLengthR);</span><br><span class="line">	a = b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h4><p>主文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include&lt;iostream&gt;</span></span><br><span class="line"><span class="comment">#include&quot;1.h&quot;</span></span><br><span class="line">const int ROWS = 10;</span><br><span class="line">const int SIZE = 3;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	using namespace std;</span><br><span class="line">	int **c;</span><br><span class="line">	c = new int *[ROWS];</span><br><span class="line">	<span class="keyword">for</span> (int i = 0; i &lt; ROWS; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		c[i] = new int[SIZE];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (int i = 0; i &lt; ROWS; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (int j = 0; j &lt; SIZE; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			*(*(c + i) + j) = i + j;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; <span class="string">c[1][1] &lt;&lt; &quot; &quot; &lt;&lt; c</span>[8][1] &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; <span class="string">c[9][2] &lt;&lt; endl;</span></span><br><span class="line"><span class="string">	changeLength2D(c</span>, ROWS, SIZE, 9, 2);</span><br><span class="line">	cout &lt;&lt; <span class="string">c[1][1] &lt;&lt; &quot; &quot; &lt;&lt; c</span>[8][1] &lt;&lt; <span class="string">endl;</span></span><br><span class="line"><span class="string">	//cout &lt;&lt; a[9][2] &lt;&lt; end;//验证</span></span><br><span class="line"><span class="string">	system(&quot;Pause&quot;);</span></span><br><span class="line"><span class="string">	return 0;</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>头文件：1.h</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">template&lt;class T&gt;</span><br><span class="line">void delete2dArray(T ** &amp;x, int numberOfRows)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">for</span> (int i = 0; i &lt; numberOfRows; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		delete[] x[i];</span><br><span class="line">	&#125;</span><br><span class="line">	delete[] x;</span><br><span class="line">	x = NULL;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">template&lt;class T&gt;</span><br><span class="line">void changeLength2D(T ** &amp;a, int oldLengthR, int oldLengthS, int newLengthR, int newLengthS)</span><br><span class="line">&#123;</span><br><span class="line">	T **b;</span><br><span class="line">	b = new T *[newLengthR];</span><br><span class="line">	<span class="keyword">for</span> (int i = 0; i &lt; newLengthR; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		b[i] = new T [newLengthS];</span><br><span class="line">	&#125;</span><br><span class="line">	int Rows= (newLengthR &lt; oldLengthR ? newLengthR : oldLengthR);</span><br><span class="line">	int Size= (newLengthS &lt; oldLengthS ? newLengthS : oldLengthS);</span><br><span class="line">	<span class="keyword">for</span> (int i = 0; i &lt; Rows; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (int j = 0; j &lt; Size; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			b[i][j] = a[i][j];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	delete2dArray(a, oldLengthR);</span><br><span class="line">	a = b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>高维数组的创建可以参考二维数组，记得使用完毕一定要删掉内存</p>
 
       
 
@@ -215,7 +246,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
         		</li>
       		
 		</ul>
@@ -271,7 +302,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/01/01/SGF%E6%96%87%E4%BB%B6%E8%A7%A3%E8%AF%BB(%E8%BD%AC%E8%BD%BD)/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2019/10/25/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -285,20 +316,15 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/01/01/STL%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0%E6%95%B4%E7%90%86/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/01/01/%E5%9B%9E%E6%BA%AF%E6%B3%95%E8%A7%A3%E5%86%B3%E5%A4%9A%E7%BB%B4%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          STL常用函数整理
+          回溯法解决多维背包问题
         
       </div>
     </a>
   
-  
-    <a href="/2021/01/01/PIL%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0%E4%B8%8E%E7%A4%BA%E4%BE%8B/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">PIL常用函数与示例</div>
-      <i class="icon-circle-right"></i>
-    </a>
   
 </nav>
 
@@ -323,7 +349,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E6%96%87"><span class="toc-number">1.</span> <span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="toc-number">1.1.</span> <span class="toc-text">一维数组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.1.1.</span> <span class="toc-text">代码实现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="toc-number">1.2.</span> <span class="toc-text">二维数组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">代码实现</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD"><span class="toc-number">2.</span> <span class="toc-text">结语</span></a></li></ol>
                     </div>
                 </span>
             </div>
