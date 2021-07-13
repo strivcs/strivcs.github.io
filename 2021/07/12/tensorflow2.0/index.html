@@ -6,23 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>数据结构、算法与应用 | strivcs</title>
+  <title>tensorflow2.0 | strivcs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="数据结构、算法与应用课后题来源：">
+  <meta name="description" content="（代码已验证）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据结构、算法与应用">
-<meta property="og:url" content="http://example.com/2021/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E4%B8%8E%E5%BA%94%E7%94%A8/index.html">
+<meta property="og:title" content="tensorflow2.0">
+<meta property="og:url" content="http://example.com/2021/07/12/tensorflow2.0/index.html">
 <meta property="og:site_name" content="strivcs">
-<meta property="og:description" content="数据结构、算法与应用课后题来源：">
+<meta property="og:description" content="（代码已验证）">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/assets/img/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E4%B8%8E%E5%BA%94%E7%94%A8/1.jpg">
-<meta property="article:published_time" content="2021-01-01T05:30:39.017Z">
-<meta property="article:modified_time" content="2019-12-17T06:26:13.992Z">
+<meta property="article:published_time" content="2021-07-12T08:07:42.388Z">
+<meta property="article:modified_time" content="2021-07-13T08:40:41.559Z">
 <meta property="article:author" content="strivcs">
-<meta property="article:tag" content="数据结构课后题">
-<meta property="article:tag" content="数据结构">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="tensorflow">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/assets/img/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E4%B8%8E%E5%BA%94%E7%94%A8/1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="strivcs" type="application/atom+xml">
   
@@ -152,29 +150,56 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-数据结构、算法与应用" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-tensorflow2.0" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      数据结构、算法与应用
+      tensorflow2.0
     </h1>
   
 
         
-        <a href="/2021/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E4%B8%8E%E5%BA%94%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2021-01-01T05:30:39.017Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-01</time>
+        <a href="/2021/07/12/tensorflow2.0/" class="archive-article-date">
+  	<time datetime="2021-07-12T08:07:42.388Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>数据结构、算法与应用课后题来源：</p>
-<a id="more"></a>
-<p><img src="../../../../assets/img/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E4%B8%8E%E5%BA%94%E7%94%A8/1.jpg" alt="1"><br>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/14YjCBqbvTJIMjlCtuRzcnw">https://pan.baidu.com/s/14YjCBqbvTJIMjlCtuRzcnw</a><br>提取码：suw5 </p>
+        <p>（代码已验证）</p>
+<a id="more"></a> 
+
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><p>来源：走向Tensorflow2.0深度学习应用编程快速入门</p>
+<h2 id="Tensorflow2-0-AutoGraph"><a href="#Tensorflow2-0-AutoGraph" class="headerlink" title="Tensorflow2.0 AutoGraph"></a>Tensorflow2.0 AutoGraph</h2><p>1.tf.constant：声明常量</p>
+<p>2.tf.Variable：声明变量</p>
+<p>3.tf.reshape(a,[3,2])：变换为(3,2)</p>
+<p>4.tf.math.reduce_mean：求平均值</p>
+<p>5.tf.random.normal：生成一个正态分布Tensor（张量）</p>
+<p>6.tf.random.uniform：生成一个均匀分布Tensor</p>
+<p>7.tf.transpose：转置</p>
+<p>8.tf.math.argmax：返回最大值对应索引</p>
+<p>9.tf.expand_dims：升维</p>
+<p>10.tf.concat：同维连接</p>
+<p>11.tf.bitcast：类型转换</p>
+<h2 id="Tensorflow2-0高阶API（tf-keras）"><a href="#Tensorflow2-0高阶API（tf-keras）" class="headerlink" title="Tensorflow2.0高阶API（tf.keras）"></a>Tensorflow2.0高阶API（tf.keras）</h2><p>1.tf.keras.activations：常用激活函数</p>
+<p>2.tf.keras.applications：已预训练的模型，直接调用</p>
+<p>3.tf.keras.backend：keras基础API接口，<del>大概用不上</del></p>
+<p>4.tf.keras.datasets：数据集，<del>要科学上网</del></p>
+<p>5.tf.keras.layers：已定义好的神经网络层</p>
+<p>6.tf.keras.losses：常用损失函数</p>
+<p>7.tf.keras.optimizers：优化器</p>
+<p>8.tf.keras.preprocessing：数据处理</p>
+<p>9.tf.keras.regularizers：正则化</p>
+<p>10.tf.keras.wrappers：包装器，跨框架迁移</p>
+<p>11.tf.keras.Sequential：线性组合神经网络层</p>
+<h2 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h2><p>1.tf.GradientTape(persistent=True) as g：求导记录器，g.gradient求导函数调用后释放，True后不释放，del g显式删除</p>
+<p>2.tf.keras.layers.Dense()：全连接层，units指定输出张量的维度（通过Tensorflow的Broadcasting机制实现），activation指定激活函数默认无，use_bias选择是否加入偏置向量默认True，kernel_initializer、bias_initializer两个变量初始化器默认tf.glorot_uniform_initializer</p>
+<p>3.tf.keras.layers.Flatten()：展平至一维</p>
+<p>4.</p>
 
       
 
@@ -219,11 +244,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数据结构课后题</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">tensorflow</a>
         		</li>
       		
 		</ul>
@@ -279,7 +304,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E4%B8%8E%E5%BA%94%E7%94%A8/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/07/12/tensorflow2.0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -293,18 +318,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/01/01/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E7%AE%97%E6%B3%95%E4%B8%8E%E5%BA%94%E7%94%A8%E7%AC%AC%E4%BA%94%E7%AB%A0%E7%AD%94%E6%A1%88/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          数据结构、算法与应用第五章答案
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/01/01/%E5%A6%82%E4%BD%95%E5%9C%A8windows%E7%B3%BB%E7%BB%9F%E4%B8%AD%E5%BF%AB%E9%80%9F%E5%BB%BA%E7%AB%8B.md%E6%96%87%E4%BB%B6/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">如何在windows系统中快速建立.md文件</div>
+    <a href="/2021/04/27/python%E8%BF%9E%E6%8E%A5sqlserver%E6%95%B0%E6%8D%AE%E5%BA%93/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">python连接sqlserver数据库</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -331,7 +347,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AD%A3%E6%96%87"><span class="toc-number">1.</span> <span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Tensorflow2-0-AutoGraph"><span class="toc-number">1.1.</span> <span class="toc-text">Tensorflow2.0 AutoGraph</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tensorflow2-0%E9%AB%98%E9%98%B6API%EF%BC%88tf-keras%EF%BC%89"><span class="toc-number">1.2.</span> <span class="toc-text">Tensorflow2.0高阶API（tf.keras）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%94%E8%AE%B0"><span class="toc-number">1.3.</span> <span class="toc-text">笔记</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
