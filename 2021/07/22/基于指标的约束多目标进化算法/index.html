@@ -8,25 +8,30 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>Indicator-Based Constrained Multi-objective Evolutionary Algorithms | strivcs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="10.1109&#x2F;TSMC.2019.2954491">
+  <meta name="description" content="10.1109&#x2F;TSMC.2019.2954491，完">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Indicator-Based Constrained Multi-objective Evolutionary Algorithms">
 <meta property="og:url" content="http://example.com/2021/07/22/%E5%9F%BA%E4%BA%8E%E6%8C%87%E6%A0%87%E7%9A%84%E7%BA%A6%E6%9D%9F%E5%A4%9A%E7%9B%AE%E6%A0%87%E8%BF%9B%E5%8C%96%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="strivcs">
-<meta property="og:description" content="10.1109&#x2F;TSMC.2019.2954491">
+<meta property="og:description" content="10.1109&#x2F;TSMC.2019.2954491，完">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="d:/blog/source/assets/img/基于指标的约束多目标进化算法/1.png">
+<meta property="og:image" content="d:/blog/source/assets/img/基于指标的约束多目标进化算法/2.png">
+<meta property="og:image" content="d:/blog/source/assets/img/基于指标的约束多目标进化算法/3.png">
+<meta property="og:image" content="d:/blog/source/assets/img/基于指标的约束多目标进化算法/4.png">
 <meta property="article:published_time" content="2021-07-22T05:13:27.156Z">
-<meta property="article:modified_time" content="2021-07-22T09:46:35.206Z">
+<meta property="article:modified_time" content="2021-07-24T06:31:08.792Z">
 <meta property="article:author" content="strivcs">
 <meta property="article:tag" content="IEEE">
 <meta property="article:tag" content="IEEE Trans">
 <meta property="article:tag" content="TSMC">
 <meta property="article:tag" content="Early Access">
-<meta property="article:tag" content="constraint handling">
-<meta property="article:tag" content="indicator">
 <meta property="article:tag" content="constrained multi-objective evolutionary algorithms">
 <meta property="article:tag" content="constrained multi-objective optimization problems">
+<meta property="article:tag" content="constraint handling">
+<meta property="article:tag" content="indicator">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="d:/blog/source/assets/img/基于指标的约束多目标进化算法/1.png">
   
     <link rel="alternative" href="/atom.xml" title="strivcs" type="application/atom+xml">
   
@@ -176,19 +181,59 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>10.1109/TSMC.2019.2954491</p>
+        <p>10.1109/TSMC.2019.2954491，完</p>
 <a id="more"></a> 
 
-<h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>CMOPs问题很有挑战性，因为需要在优化相互冲突目标函数的同时，处理各种约束条件。目前主流的研究方式是结合基于支配和分解的多目标进化算法（MOEA/DD）和约束技术（CHT），但是基于指标的MOEAs却无人问津。本文首先研究了基于指标的MOEAs与CHT结合的可行性，开发了基于指标的约束多目标进化算法（CMOEAs）框架，并使用19个广泛使用的多目标优化测试函数进行实验以分析9个基于指标的CMOEAs的特征。实验结果表明，MOEAs和CHT在基于指标的CMOEAs中都起着非常重要的作用，对如何选择基于指标的CMOEAs提出了意见，并将九种基于指标的CMOEAs与五种最先进的CMOEAs进行比较。</p>
-<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>提出了一种通用的基于指标的MOEAs以易于结合不同的CHT，文章考虑了三种基于指标的MOEAs（HypE，IBEA，ISDE）和三种CHT（feasibility rule（FR），stochastic ranking（SR），是ε-constrained method）组合九种基于指标的CMOEAs，并使用19种测试函数评估性能。文章的主要贡献如下：</p>
+<h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>​    CMOPs问题很有挑战性，因为需要在优化相互冲突目标函数的同时，处理各种约束条件。目前主流的研究方式是结合基于支配和分解的多目标进化算法（MOEA/DD）和约束技术（CHT），但是基于指标的MOEAs却无人问津。本文首先研究了基于指标的MOEAs与CHT结合的可行性，开发了基于指标的约束多目标进化算法（CMOEAs）框架，并使用19个广泛使用的多目标优化测试函数进行实验以分析9个基于指标的CMOEAs的特征。实验结果表明，MOEAs和CHT在基于指标的CMOEAs中都起着非常重要的作用，对如何选择基于指标的CMOEAs提出了意见，并将九种基于指标的CMOEAs与五种最先进的CMOEAs进行比较。</p>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>​    提出了一种通用的基于指标的MOEAs以易于结合不同的CHT，文章考虑了三种基于指标的    MOEAs（hypervolume estimation algorithm for multi-objective optimization（HypE），IBEA，ISDE）和三种CHT（feasibility rule（FR），stochastic ranking（SR），是ε-constrained method）组合九种基于指标的CMOEAs，并使用19种测试函数评估性能。文章的主要贡献如下：</p>
 <p>1.文章研究了基于指标的MOEAs解决CMOPs问题的合理性和可能性，提出了一个解决CMOPs问题的新视角。</p>
 <p>2.提出了一种基于指标CMOEA的开放框架，并开发了9种新的基于指标的CMOEA。</p>
 <p>3.对提出的九种算法采用19个测试函数评估，结果显示其性能同时依赖于基于指标的MOEAs和CHT。同时，并没有算法能够在所有测试函数上获得最佳性能，据此给出了选择基于指标的CMOEAs的一些建议。</p>
 <p>4.选取九种算法中较优越的HypE-FR组合与其他五个最先进的CMOEAs进行比较实验，结果表明其性能优越，基于指标的CMOEAs值得广泛和深入的研究。</p>
-<h1 id="Related-work"><a href="#Related-work" class="headerlink" title="Related work"></a>Related work</h1><p>A.CMOPs的基础定义：略</p>
-<p>B.基于指标的MOEAs：</p>
-<p>1.超体积（hypervolume，HV）基础的MOEAs：</p>
-<p>​    HV指标是最常用的指标，因为它对帕累托支配是严格单调的</p>
+<h1 id="Related-work"><a href="#Related-work" class="headerlink" title="Related work"></a>Related work</h1><h4 id="A-CMOPs的基础定义：略"><a href="#A-CMOPs的基础定义：略" class="headerlink" title="A.CMOPs的基础定义：略"></a>A.CMOPs的基础定义：略</h4><h4 id="B-基于指标的MOEAs："><a href="#B-基于指标的MOEAs：" class="headerlink" title="B.基于指标的MOEAs："></a>B.基于指标的MOEAs：</h4><h5 id="1-基于超体积（hypervolume，HV）的MOEAs："><a href="#1-基于超体积（hypervolume，HV）的MOEAs：" class="headerlink" title="1.基于超体积（hypervolume，HV）的MOEAs："></a>1.基于超体积（hypervolume，HV）的MOEAs：</h5><p>​    HV指标是最常用的指标，因为它对帕累托支配是严格单调的。对于大多数基于HV的MOEAs，他们通常先通过一个非支配排序确定一个特定非支配级别$F_l$，接着对于$F_l$中的每个个体$x_u$，其基于指标的适应值定义为去除本体后的超体积损失结果：<br>$$<br>FV_{HV}(x_u)=HV(F_l)-HV(F_l\setminus x_u)<br>$$</p>
+<p>​    另外一个确定适应值的方法是设计一个二元HV指标，在这个方法中定义了一个附加指标$I_{HD}$如下：<br>$$<br>I_{HD}(x_u,x_v)=\begin{cases}<br>HV(x_v)-HV(x_u), &amp;\text{if }x_v\prec x_u \<br>HV({x_u,x_v})-HV(x_u), &amp;\text{otherwise.}\<br>\end{cases}<br>$$<br>​    则基于该指标的适应值计算公式如下：<br>$$<br>FV_{HV}(x_u)=\sum _{x_v\in P,x_v \neq x_u}-e^{-I_{HD}(x_u,x_v)/0.05}<br>$$<br>​    与上述方法不同，多目标优化的超体积估计算法（hypervolume estimation algorithm for multi-objective optimization，HypE）当前作为基于HV的MOEA最受欢迎的指标，提出了一个在交配和环境选择程序中为个体确定适应值的全新的策略。在该策略中，由非支配解和参考点R包围的空间被分割成一系列特定的分区。随后，计算每个分区的HV贡献值并应用聚合方法确定每个个体的适应值。</p>
+<h5 id="2-基于-I-epsilon-IBEA-的MOEAs："><a href="#2-基于-I-epsilon-IBEA-的MOEAs：" class="headerlink" title="2.基于$I_{(\epsilon)^{+-}}$(IBEA)的MOEAs："></a>2.基于$I_{(\epsilon)^{+-}}$(IBEA)的MOEAs：</h5><p>​    指标是从帕累托支配关系扩展的二元特性指标，定义如下：<br>$$<br>I_{(\epsilon)^+}(x_u,x_v)=\displaystyle\min_\epsilon(f_i(x_u)-\epsilon\le f_i(x_v),i\in{1,…,m})<br>$$<br>​    则基于该指标的适应值计算公式如下：<br>$$<br>FV_{(\epsilon)^+}(x_u)=\displaystyle\sum_{x_v\in P,x_v\ne x_u}-e^{-I_{(\epsilon)^+}(x_u,x_v)/0.05}<br>$$<br>​    基于该指标提出了IBEA，在几个连续和离散的多目标基准测试问题中，该算法优于NSGA-Ⅱ和SPEA2。当前，该指标被广泛部署在多目标优化：TWO-Arch2，两个archives分别用来处理收敛性和多样性，收敛archive就是根据该指标更新的；SRA，利用SR来平衡不同指标的偏差，包括该指标。</p>
+<h5 id="3-基于-I-SDE-的MOEAs："><a href="#3-基于-I-SDE-的MOEAs：" class="headerlink" title="3.基于$I_{SDE}$的MOEAs："></a>3.基于$I_{SDE}$的MOEAs：</h5><p>​    该指标是基于基于移位的密度估计来设计的二元特性指标，定义如下：<br>$$<br>I_{SDE}(x_u,x_v)=\sqrt{\sum_{1\le i\le m}sd(f_i(x_u),f_i(x_v))^2}<br>$$<br>​    其中<br>$$<br>sd(f_i(x_u),f_i(x_v))=\begin{cases}<br>f_i(x_v)-f_i(x_u), &amp;\text{if }f_i(x_u)&lt;f_i(x_v) \<br>0, &amp;\text{otherwise.}\<br>\end{cases}<br>$$<br>​    然后，该指标基础的适应值被确定为第k个最小值。</p>
+<p>​    该指标首先在SRA中被提出，与IBEA一起处理多目标优化问题。最近，AnD被提出去做基于角度的选择和基于移位的密度估计以解决多目标优化问题，本文中将没有基于角度选择的AnD变体称为ISDE。</p>
+<h4 id="C-Constraint-Handling-Techniques"><a href="#C-Constraint-Handling-Techniques" class="headerlink" title="C.Constraint-Handling Techniques"></a>C.Constraint-Handling Techniques</h4><p>​    进化算法最初设计是为了解决无约束优化，因此为了解决约束优化需要附加CHT，本文给出三种著名的处理约束单目标优化问题的CHT（FR，SR，$\epsilon$-constrained method）</p>
+<h5 id="1-FR：若个体-x-u-优于另一个体-x-v-需要满足下列条件之一"><a href="#1-FR：若个体-x-u-优于另一个体-x-v-需要满足下列条件之一" class="headerlink" title="1.FR：若个体$x_u$优于另一个体$x_v$需要满足下列条件之一"></a>1.FR：若个体$x_u$优于另一个体$x_v$需要满足下列条件之一</h5><p>1.1$x_u$可行但$x_v$不可行</p>
+<p>1.2都不可行，但$x_u$约束违反程度更低</p>
+<p>1.3都可行，但$x_u$目标函数值更小</p>
+<h5 id="2-SR：SR使用了由用户定义的参数-P-f-来控制两个变量的比较标准"><a href="#2-SR：SR使用了由用户定义的参数-P-f-来控制两个变量的比较标准" class="headerlink" title="2.SR：SR使用了由用户定义的参数$P_f$来控制两个变量的比较标准"></a>2.SR：SR使用了由用户定义的参数$P_f$来控制两个变量的比较标准</h5><p>1.1都可行，根据目标函数与概率1比较</p>
+<p>1.2若其中一个不可行，根据目标函数与概率$P_f$比较并根据约束违反程度和$(1-P_f)$比较</p>
+<p>​    SR使用了类似冒泡排序的过程对个体排列。通常情况下，通过利用$P_f$，SR旨在整个优化过程中平衡目标函数和约束</p>
+<h5 id="3-epsilon-constrained-method：若个体-x-u-优于另一个体-x-v-需要满足下列条件之一-CV是描述约束违反程度的函数"><a href="#3-epsilon-constrained-method：若个体-x-u-优于另一个体-x-v-需要满足下列条件之一-CV是描述约束违反程度的函数" class="headerlink" title="3.$\epsilon$-constrained method：若个体$x_u$优于另一个体$x_v$需要满足下列条件之一(CV是描述约束违反程度的函数)"></a>3.$\epsilon$-constrained method：若个体$x_u$优于另一个体$x_v$需要满足下列条件之一(CV是描述约束违反程度的函数)</h5><p>$$<br>\begin{cases}<br>f(x_u)&lt;f(x_v), &amp;\text{if }CV(x_u)\le \epsilon\ and\  CV(x_v)\le \epsilon \<br>f(x_u)&lt;f(x_v), &amp;\text{if }CV(x_u)=CV(x_v)\<br>CV(x_u)&lt;CV(x_v). &amp;\text{otherwise.}<br>\end{cases}<br>$$</p>
+<p>​    对于$\epsilon$，它随着种群个数的增多而减小<br>$$<br>\epsilon=\begin{cases}<br>\epsilon _0(1-\frac tT)^{cp},&amp;\text if\ \frac tT&lt;p\<br>0,&amp;\text {otherwise.}<br>\end{cases}<br>$$</p>
+<p>$$<br>cp=-\frac{log\ \epsilon_0+\lambda}{log(1-p)}<br>$$</p>
+<p>​    其中，$\epsilon_0$代表初始门槛以及初始种群最大的约束违反程度，t代表当前种群编号，T代表最大种群个数，$\lambda$设为6，p控制着目标函数信息探索的程度（本文设为2）</p>
+<h5 id="4-其他"><a href="#4-其他" class="headerlink" title="4.其他"></a>4.其他</h5><p>​    约束非支配排序：一种完全无参数的方法，种群中每个解都基于约束违反程度和帕累托等级被确定一个约束非支配等级，CNR值较低的个体将生存到下一代。</p>
+<h1 id="Indicator-based-CMOAs"><a href="#Indicator-based-CMOAs" class="headerlink" title="Indicator-based CMOAs"></a>Indicator-based CMOAs</h1><h4 id="A-原理分析"><a href="#A-原理分析" class="headerlink" title="A.原理分析"></a>A.原理分析</h4><p>​    CMOPs同时包含相互冲突目标函数和各种约束条件。当求解该问题的时候，应同时考虑以下两种权衡：</p>
+<p>1.目标函数之间的权衡</p>
+<p>2.目标函数和约束之间的权衡</p>
+<p>​    然而，如果所有目标函数值可以作为单个值输出，CMOPs的求解会因为只需要考虑这个单值和约束之间的平衡而变的很容易。幸运的是，基于指标的MOEAs可以将基于指标的适应值作为这个单值，因为他有能力在多样性和收敛性方面评估个体在所有目标函数上的表现。因此，如果我们尝试扩展基于指标的MOEAs来解决CMOPs，我们只需要考虑基于指标的适应值和约束之间的平衡。具体来说，对于种群中的个体x，它被期待去得到一个满足所有约束的较大的基于指标适应值$FV(x)$：<br>$$<br>\begin{aligned}<br>\max \ &amp;FV(x)\<br>s.t.\ &amp;g_j(x)\le0,\ j=1,2,…,l\<br>&amp;h_j(x)=0\ j=l+1,l+2,…,n\<br>&amp;x=(x_1,x_2,…,x_D)^T\in S.<br>\end{aligned}<br>$$<br>​    显然，上述优化问题是一个约束单目标优化问题，为了解决单目标优化问题的基于指标适应值和约束之间的平衡，可以使用CHT。因此可以很自然的将基于指标的MOEAs与CHT相结合。</p>
+<p>​    沿着这个思路，本文提出了一个通用基于指标的CMOEAs框架，并开发了一系列基于指标的CMOEAs。</p>
+<p>Remark 1：CHT技术并不容易和基于支配的MOEAs结合，因为在种群中可能会存在很多的支配解。例如SR的CHT，个体应当在目标函数和约束条件方面具有可比性。</p>
+<p>Remark 2：原则上，CHT和MOEA/D相结合十分容易，因为基于分解的方法可以将CMOP分割成一系列单目标约束问题，然后CHT就可以被应用于解决这些单目标优化问题。然而，由于约束的存在，CMOP的帕累托前沿可能会非常复杂；因此，调整权重向量以适应帕累托前沿的形状很有挑战性。此外，很难去设置理想近似点，因为种群中的很多解虽然不可行，但是有良好的目标函数值。</p>
+<h4 id="B-主体框架"><a href="#B-主体框架" class="headerlink" title="B.主体框架"></a>B.主体框架</h4><p><img src="D:\blog\source\assets\img\基于指标的约束多目标进化算法\1.png" alt="1"></p>
+<p>​    ==在交叉部分，通过二元锦标赛选择，然后模拟二进制交叉和多项式突变来生成。其中，二元锦标赛的选择是基于个人在环境选择中的表现，（？？？？？？遗传算法？）==</p>
+<h4 id="C-环境选择"><a href="#C-环境选择" class="headerlink" title="C.环境选择"></a>C.环境选择</h4><p>​    环境选择旨在为下一代选择N个性能较好的个体，通过实施CHT实现。下面介绍如何结合CHT技术：</p>
+<h5 id="1-FR"><a href="#1-FR" class="headerlink" title="1.FR"></a>1.FR</h5><p><img src="D:\blog\source\assets\img\基于指标的约束多目标进化算法\2.png" alt="2"></p>
+<p>Remark 3：略</p>
+<h5 id="2-SR"><a href="#2-SR" class="headerlink" title="2.SR"></a>2.SR</h5><p><img src="D:\blog\source\assets\img\基于指标的约束多目标进化算法\3.png" alt="3"></p>
+<h5 id="3-epsilon-Constrainted-Method"><a href="#3-epsilon-Constrainted-Method" class="headerlink" title="3.$\epsilon$-Constrainted Method"></a>3.$\epsilon$-Constrainted Method</h5><p><img src="D:\blog\source\assets\img\基于指标的约束多目标进化算法\4.png" alt="4"></p>
+<h5 id="D-讨论"><a href="#D-讨论" class="headerlink" title="D.讨论"></a>D.讨论</h5><p>​    上述三个CHT的时间复杂度分别为$O(NlogN)$，$O(N^2)$，$O(NlogN)$，而前面三种基于指标的CMOAs均为$O(N^2)$，因此CHT技术的时间复杂度是可以接受的。</p>
+<h1 id="Experimental-setup"><a href="#Experimental-setup" class="headerlink" title="Experimental setup"></a>Experimental setup</h1><h4 id="A-测试实例和性能度量"><a href="#A-测试实例和性能度量" class="headerlink" title="A.测试实例和性能度量"></a>A.测试实例和性能度量</h4><p>​    测试函数：1-8：CTPs，9：BNH，10：CONSTR，11：disc brake design（DBD），12：OSY，13：speed reducer design（SRD），14：SRN，15：TNK，16：welded beam design（WBD）</p>
+<p>其中，1-16为二目标函数，17-19为三目标函数（从CDTLZ测试套件中选取）</p>
+<p>​    为了比较不同算法的性能，选取IGD和HV两个性能指标。</p>
+<h4 id="B-对比算法"><a href="#B-对比算法" class="headerlink" title="B.对比算法"></a>B.对比算法</h4><p>​    选取了目前（2019）最前沿的五种CMOEAs：NSGA-Ⅱ-CDP，A-NSGA-Ⅲ，MOEA/D-ACDP，C-MOEA/DD，C-AnD。</p>
+<h4 id="C-参数设置"><a href="#C-参数设置" class="headerlink" title="C.参数设置"></a>C.参数设置</h4><p>略</p>
+<h1 id="Experimental-results-and-discussions"><a href="#Experimental-results-and-discussions" class="headerlink" title="Experimental results and discussions"></a>Experimental results and discussions</h1><h4 id="A-基于指标的CMOEAs比较"><a href="#A-基于指标的CMOEAs比较" class="headerlink" title="A.基于指标的CMOEAs比较"></a>A.基于指标的CMOEAs比较</h4><p>1.CTPs测试函数（1-8）：HypE-$\epsilon$和HypE-FR优</p>
+<p>2.真实世界的CMOPs（9-16）：HypE-$\epsilon$和HypE-FR优，IBEA-FR仅OSY指标排第二</p>
+<p>3.三目标的CDTLZ（17-19）：IBEA-FR和IBEA-$\epsilon$优</p>
+<p>4.讨论：从上述结果可以观察到，基于指标的MOEAs和CHT均对整体性能有较大影响，且并没有一个基于指标的CMOEAs可以支配其他所有算法。</p>
+<p>​    结果表明：ISDE指标并不适合解决二目标/三目标CMOPs，但是被证明有解决无约束多目标优化问题上的潜力。SR由于它在最后一代始终保持非可行解的平衡机制，导致了较差的效果。因此，仍有研究价值。</p>
+<h4 id="B-HypE-FR与五种前沿CMOEAs比较"><a href="#B-HypE-FR与五种前沿CMOEAs比较" class="headerlink" title="B.HypE-FR与五种前沿CMOEAs比较"></a>B.HypE-FR与五种前沿CMOEAs比较</h4><p>​    结果表明，该算法在CTPs和CMOP较优，但CDTLZ问题差于全部其他五种算法。</p>
+<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><p>​    本文提出了九种基于指标的CMOEAs。实验表明并没有完美的算法，HypE-FR相对较优。在二目标函数中优于其他五种前沿CMOEAs，但三目标较差。</p>
 
       
 
@@ -249,19 +294,19 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">constraint handling</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">indicator</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">constrained multi-objective evolutionary algorithms</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">constrained multi-objective optimization problems</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">constraint handling</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">indicator</a>
         		</li>
       		
 		</ul>
@@ -369,7 +414,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Abstract"><span class="toc-number">1.</span> <span class="toc-text">Abstract</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Introduction"><span class="toc-number">2.</span> <span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Related-work"><span class="toc-number">3.</span> <span class="toc-text">Related work</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Abstract"><span class="toc-number">1.</span> <span class="toc-text">Abstract</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Introduction"><span class="toc-number">2.</span> <span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Related-work"><span class="toc-number">3.</span> <span class="toc-text">Related work</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#A-CMOPs%E7%9A%84%E5%9F%BA%E7%A1%80%E5%AE%9A%E4%B9%89%EF%BC%9A%E7%95%A5"><span class="toc-number">3.0.0.1.</span> <span class="toc-text">A.CMOPs的基础定义：略</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#B-%E5%9F%BA%E4%BA%8E%E6%8C%87%E6%A0%87%E7%9A%84MOEAs%EF%BC%9A"><span class="toc-number">3.0.0.2.</span> <span class="toc-text">B.基于指标的MOEAs：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E5%9F%BA%E4%BA%8E%E8%B6%85%E4%BD%93%E7%A7%AF%EF%BC%88hypervolume%EF%BC%8CHV%EF%BC%89%E7%9A%84MOEAs%EF%BC%9A"><span class="toc-number">3.0.0.2.1.</span> <span class="toc-text">1.基于超体积（hypervolume，HV）的MOEAs：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E5%9F%BA%E4%BA%8E-I-epsilon-IBEA-%E7%9A%84MOEAs%EF%BC%9A"><span class="toc-number">3.0.0.2.2.</span> <span class="toc-text">2.基于$I_{(\epsilon)^{+-}}$(IBEA)的MOEAs：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E5%9F%BA%E4%BA%8E-I-SDE-%E7%9A%84MOEAs%EF%BC%9A"><span class="toc-number">3.0.0.2.3.</span> <span class="toc-text">3.基于$I_{SDE}$的MOEAs：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C-Constraint-Handling-Techniques"><span class="toc-number">3.0.0.3.</span> <span class="toc-text">C.Constraint-Handling Techniques</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-FR%EF%BC%9A%E8%8B%A5%E4%B8%AA%E4%BD%93-x-u-%E4%BC%98%E4%BA%8E%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BD%93-x-v-%E9%9C%80%E8%A6%81%E6%BB%A1%E8%B6%B3%E4%B8%8B%E5%88%97%E6%9D%A1%E4%BB%B6%E4%B9%8B%E4%B8%80"><span class="toc-number">3.0.0.3.1.</span> <span class="toc-text">1.FR：若个体$x_u$优于另一个体$x_v$需要满足下列条件之一</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-SR%EF%BC%9ASR%E4%BD%BF%E7%94%A8%E4%BA%86%E7%94%B1%E7%94%A8%E6%88%B7%E5%AE%9A%E4%B9%89%E7%9A%84%E5%8F%82%E6%95%B0-P-f-%E6%9D%A5%E6%8E%A7%E5%88%B6%E4%B8%A4%E4%B8%AA%E5%8F%98%E9%87%8F%E7%9A%84%E6%AF%94%E8%BE%83%E6%A0%87%E5%87%86"><span class="toc-number">3.0.0.3.2.</span> <span class="toc-text">2.SR：SR使用了由用户定义的参数$P_f$来控制两个变量的比较标准</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-epsilon-constrained-method%EF%BC%9A%E8%8B%A5%E4%B8%AA%E4%BD%93-x-u-%E4%BC%98%E4%BA%8E%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BD%93-x-v-%E9%9C%80%E8%A6%81%E6%BB%A1%E8%B6%B3%E4%B8%8B%E5%88%97%E6%9D%A1%E4%BB%B6%E4%B9%8B%E4%B8%80-CV%E6%98%AF%E6%8F%8F%E8%BF%B0%E7%BA%A6%E6%9D%9F%E8%BF%9D%E5%8F%8D%E7%A8%8B%E5%BA%A6%E7%9A%84%E5%87%BD%E6%95%B0"><span class="toc-number">3.0.0.3.3.</span> <span class="toc-text">3.$\epsilon$-constrained method：若个体$x_u$优于另一个体$x_v$需要满足下列条件之一(CV是描述约束违反程度的函数)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-%E5%85%B6%E4%BB%96"><span class="toc-number">3.0.0.3.4.</span> <span class="toc-text">4.其他</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Indicator-based-CMOAs"><span class="toc-number">4.</span> <span class="toc-text">Indicator-based CMOAs</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#A-%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90"><span class="toc-number">4.0.0.1.</span> <span class="toc-text">A.原理分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#B-%E4%B8%BB%E4%BD%93%E6%A1%86%E6%9E%B6"><span class="toc-number">4.0.0.2.</span> <span class="toc-text">B.主体框架</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C-%E7%8E%AF%E5%A2%83%E9%80%89%E6%8B%A9"><span class="toc-number">4.0.0.3.</span> <span class="toc-text">C.环境选择</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-FR"><span class="toc-number">4.0.0.3.1.</span> <span class="toc-text">1.FR</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-SR"><span class="toc-number">4.0.0.3.2.</span> <span class="toc-text">2.SR</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-epsilon-Constrainted-Method"><span class="toc-number">4.0.0.3.3.</span> <span class="toc-text">3.$\epsilon$-Constrainted Method</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#D-%E8%AE%A8%E8%AE%BA"><span class="toc-number">4.0.0.3.4.</span> <span class="toc-text">D.讨论</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Experimental-setup"><span class="toc-number">5.</span> <span class="toc-text">Experimental setup</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#A-%E6%B5%8B%E8%AF%95%E5%AE%9E%E4%BE%8B%E5%92%8C%E6%80%A7%E8%83%BD%E5%BA%A6%E9%87%8F"><span class="toc-number">5.0.0.1.</span> <span class="toc-text">A.测试实例和性能度量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#B-%E5%AF%B9%E6%AF%94%E7%AE%97%E6%B3%95"><span class="toc-number">5.0.0.2.</span> <span class="toc-text">B.对比算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C-%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE"><span class="toc-number">5.0.0.3.</span> <span class="toc-text">C.参数设置</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Experimental-results-and-discussions"><span class="toc-number">6.</span> <span class="toc-text">Experimental results and discussions</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#A-%E5%9F%BA%E4%BA%8E%E6%8C%87%E6%A0%87%E7%9A%84CMOEAs%E6%AF%94%E8%BE%83"><span class="toc-number">6.0.0.1.</span> <span class="toc-text">A.基于指标的CMOEAs比较</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#B-HypE-FR%E4%B8%8E%E4%BA%94%E7%A7%8D%E5%89%8D%E6%B2%BFCMOEAs%E6%AF%94%E8%BE%83"><span class="toc-number">6.0.0.2.</span> <span class="toc-text">B.HypE-FR与五种前沿CMOEAs比较</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Conclusion"><span class="toc-number">7.</span> <span class="toc-text">Conclusion</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -493,19 +538,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PIL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">NLP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">PIL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -529,15 +574,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">毕设</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">TSMC</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Tensorflow</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">毕设</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -561,6 +606,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">constrained multi-objective evolutionary algorithms</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">constrained multi-objective optimization problems</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">constraint handling</a>
               </li>
              
@@ -577,15 +630,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">constrained multi-objective evolutionary algorithms</a>
+                <a href="javascript:void(0)" class="js-tag color5">EVCO</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">constrained multi-objective optimization problems</a>
+                <a href="javascript:void(0)" class="js-tag color2">Hypervolume indicator</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">multi-objective evolutionary algorithms</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Monte Carlo sampling</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -676,7 +733,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">NEU</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">NEU-SAPI</div>
   	  	
     	</section>
     

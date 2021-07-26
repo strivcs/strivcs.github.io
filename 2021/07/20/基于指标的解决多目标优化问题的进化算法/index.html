@@ -8,15 +8,17 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>Indicator-based Evolutionary Algorithm for Solving Constrained Multi-objective Optimization Problems | strivcs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="10.1109&#x2F;TEVC.2021.3089155">
+  <meta name="description" content="10.1109&#x2F;TEVC.2021.3089155，未完">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Indicator-based Evolutionary Algorithm for Solving Constrained Multi-objective Optimization Problems">
 <meta property="og:url" content="http://example.com/2021/07/20/%E5%9F%BA%E4%BA%8E%E6%8C%87%E6%A0%87%E7%9A%84%E8%A7%A3%E5%86%B3%E5%A4%9A%E7%9B%AE%E6%A0%87%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98%E7%9A%84%E8%BF%9B%E5%8C%96%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="strivcs">
-<meta property="og:description" content="10.1109&#x2F;TEVC.2021.3089155">
+<meta property="og:description" content="10.1109&#x2F;TEVC.2021.3089155，未完">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="d:/blog/source/assets/img/基于指标的解决多目标优化问题的进化算法/1.png">
+<meta property="og:image" content="d:/blog/source/assets/img/基于指标的解决多目标优化问题的进化算法/2">
 <meta property="article:published_time" content="2021-07-20T09:04:54.729Z">
-<meta property="article:modified_time" content="2021-07-22T07:22:14.739Z">
+<meta property="article:modified_time" content="2021-07-26T05:22:09.467Z">
 <meta property="article:author" content="strivcs">
 <meta property="article:tag" content="IEEE">
 <meta property="article:tag" content="IEEE Trans">
@@ -27,6 +29,7 @@
 <meta property="article:tag" content="multi-objective optimization">
 <meta property="article:tag" content="evolutionary algorithm">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="d:/blog/source/assets/img/基于指标的解决多目标优化问题的进化算法/1.png">
   
     <link rel="alternative" href="/atom.xml" title="strivcs" type="application/atom+xml">
   
@@ -176,10 +179,30 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>10.1109/TEVC.2021.3089155</p>
+        <p>10.1109/TEVC.2021.3089155，未完</p>
 <a id="more"></a> 
 
-<h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>基于指标的解决多目标优化问题的进化算法</p>
+<h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>​    为了阻止种群被困在局部区域，导致在处理约束多目标优化问题（constrained multi-objective optimization problems，CMOPs）时丢失约束帕累托前沿片段，应该引导种群均匀的探索未被可行解探索到的区域。为了这个目的，本文第一次将基于距离的代价值引入目标区域，并运用这个距离和约束定义一个估计每个个体对探索有希望区域贡献的指标。理论的研究显示所提出的指标能够有效的引导种群聚焦于探索有望区域而不是聚集于局部区域。因此，我们提出了一个基于这个指标的新CHT。为了进一步改善种群在有望区域的多样性，提出的基于指标的CHT将有望区域划分为多个子区域，然后优先去除最密集区域的最差适应值的个体。我们将基于指标的CHT嵌入到进化算法中，并提出了一个解决CMOPs的基于指标的约束多目标算法。通过一些基准测试的数值实验显示了所提算法的有效性。与六个最前沿的约束多目标优化进化算法比较，本算法在处理不同类型的CMOPs中均有更好性能，尤其是那些个体容易出现在支配约束帕累托前沿片段的局部不可行域的情况。</p>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>​    描述个体整体的约束违反程度的计算公式如下：<br>$$<br>g(x)=\sum_{i=1}^q \frac{\max(0,c_i(x))}{\max(1,c_i^{max})},<br>$$<br>​    其中，$c_i^{max}$是$c_i(x)$中最大的值，并且$c_i(x)$通常被标准化到[0，1]。函数值为0的x被称为可行解，函数值不为0的解被称为不可行解。非约束帕累托前沿（unconstrained Pareto front，UPF），约束帕累托前沿（constrained Pareto front，CPF）。CPF中不被任何检查的可行个体支配的区域称为有望区域（promising area）。</p>
+<p>​    在研究界中，已经提出了许多解决CMOPs的算法。例如，不同的贪婪策略被提出以改善在线性约束条件下的可行解和不可行解；混合EMOA和？；为了平衡CMOPs的目标和约束，设计了不同的CHTs。</p>
+<p>​    一些CHTs将每个解的整体约束违反视为目标的惩罚，用动态和自适应惩罚因素将整体约束违反纳入目标，从而将CMOPs转化为非约束多目标优化问题（unconstrained multi-objective optimization problems，UMOPs）。</p>
+<p>​    可行性主导CHTs，例如约束支配原则，将优化约束视为比优化目标更重要的工作。由于该方法比较简单，因此可行性主导CHTs被广泛应用于约束EMOAs。不过，由于过分强调了可行性的重要性，因此这些可行性主导的CHTs更容易陷入到局部可行域。为了解决这个问题，已经做了一些放松可行性定义的努力，例如$\epsilon$-CDP</p>
+<p>​    一些CHTs将约束条件视为目标，并将CMOPs转换为UMOPs，然后通过带有偏差的无约束EMOAs解决。例如：CM2M将m目标的CMOPs转换为m+1目标的UMOPs，通过将整体约束违反视为一个额外的目标。，之后使用一组动态调整到可行空间的权重向量来引导种群求解m+1UMOPs。</p>
+<p>​    在最近的研究中，开发出一些忽略约束且只优化目标的CHTs。在PPS中，一些搜索过程分为push阶段和pull阶段。在push阶段，所有的约束都被忽视，种群只优化目标。在pull阶段，同时考虑约束和目标，利用一共改进的$\epsilon$-CDP进化种群。在C-TAEA和CCMO中，部署了两个合作的种群来处理CMOPs，其中，一个种群的探索同时优化约束和目标，另一个种群的探索只优化目标。</p>
+<p>​    简而言之，目前大多数存在的CHTs都是通过优化目标和/或约束条件来引导种群搜索。这样，种群很容易被推进局部可行域和CMOPs的UPFs，导致目标空间的其他区域无法被充分探索。这可能导致寻找部分或所有帕累托片段失败，特别是当个体特别容易出现在支配CPF片段的局部最优不可行域时。因此，设计解决CMOPs的有效CHT仍有意义。</p>
+<p>​    为了解决上述问题，本文提出了针对CMOPs的基于指标的CHT，定义了一个基于代价值的距离来测量目标空间内点的拥挤程度。与传统的闵可夫斯基距离相比，基于代价值的距离可以更好的引导种群充分的探索不同区域，不管这些区域与初始的远近，这对处理CMOPs问题很有帮助。为推动种群在PA更好的分布，我们使用基于代价值的距离和整体约束违反来设计评估可行个体和不可行个体的指标。通过提出指标的评估，在PA内的个体将好于PA外的个体。这个方法不仅会有效的指引种群聚焦于PA，而且还会阻止个体陷入局部区域。总之，我们设计了一个新的基于该指标的CHT。为了更好的改善种群在PA内的多样性，提出的基于指标的CHT将PA划分为多个子种群。之后，算法接续删除了在最密集子区域中适应值最差的个体来修剪种群。将基于指标的CHT嵌入到进化算法中，提出了一种基于指标的约束多目标算法（indicator-based constrained multi-objective algorithm，ICMA）来解决CMOPs。数值实验表明该算法优于其他六种最前沿算法。</p>
+<h1 id="Proposed-indicator-based-CHT"><a href="#Proposed-indicator-based-CHT" class="headerlink" title="Proposed indicator-based CHT"></a>Proposed indicator-based CHT</h1><p>​    在目标域，我们使用下面的公式调整数值:<br>$$<br>f_p(x)=f_p(x)-f_p^{min}+10^{-6},p=1,…,m,<br>$$<br>​    其中，$f_p^{min}$是所有检查的可行和不可行解在第p个目标上找到的最小值。（归一化）</p>
+<p>​    为了简化表示，我们用$y^i$和$g^i$代表目标向量和个体的整体违反约束，$y^i=F(x^i),g^i=g(x^i)$。</p>
+<h4 id="A-Motivation"><a href="#A-Motivation" class="headerlink" title="A.Motivation"></a>A.Motivation</h4><p><img src="D:\blog\source\assets\img\基于指标的解决多目标优化问题的进化算法\1.png" alt="1"></p>
+<p>​    当处理CMOPs，这里有两个因素值得注意。第一，因为CMOPs的CPFs不可能在PA外部出现，因此种群在PA内搜索更有希望。第二，因为包含CPF片段的可行域可能在PA的任何地方存在，因此引导种群在PA内良好的分散可以有效避免搜寻失败。</p>
+<p>​    如果通过优化约束和目标来决定性能，或者仅包含目标，则上图中的$x^5$和$x^7$都将被去除（肯定差于$x^1\sim x^4$）。所以，现有的技术将低估区域Ⅰ和区域Ⅲ，从而错过帕累托前沿片段。而与现有的CHTs不同，如果根据前文所述，将删去较拥挤的$x^1\sim x^4$，从而保持种群多样性。</p>
+<h4 id="B-Cost-value-based-distance"><a href="#B-Cost-value-based-distance" class="headerlink" title="B.Cost value based distance"></a>B.Cost value based distance</h4><p>​    首先定义衡量两点拥挤程度的函数$d^{CV}(<em>,</em>)$：越小越挤，0时共点<br>$$<br>d^{CV}(y^i,y^j)=log\ max(CV(y^i|y^j),CV(y^j|y^i)),<br>$$</p>
+<p>$$<br>CV(y^i|y^j)=\begin{cases}<br>\displaystyle\max_{p\in{1,…,m}}\frac{y_p^j}{y_p^i},&amp;\text if\ \exist y_p^j&gt;y_p^i\<br>\displaystyle\min_{p\in{1,…,m}}\frac{y_p^j}{y_p^i},&amp;\text otherwise.\<br>\end{cases}<br>$$</p>
+<h5 id="Theorem-1：函数拥有下列性质"><a href="#Theorem-1：函数拥有下列性质" class="headerlink" title="Theorem 1：函数拥有下列性质"></a>Theorem 1：函数拥有下列性质</h5><p>1.非负性：非负</p>
+<p>2.同一性：当且仅当两向量相同时，函数为0</p>
+<p>3.对称性：互换位置函数值不变</p>
+<p>4.直递性：$d^{CV}(y^i,y^j)+d^{CV}(y^i,y^k)\ge d^{CV}(y^j,y^k)$</p>
+<p><img src="D:\blog\source\assets\img\基于指标的解决多目标优化问题的进化算法\2" alt="img"></p>
 
       
 
@@ -360,7 +383,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Abstract"><span class="toc-number">1.</span> <span class="toc-text">Abstract</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Abstract"><span class="toc-number">1.</span> <span class="toc-text">Abstract</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Introduction"><span class="toc-number">2.</span> <span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Proposed-indicator-based-CHT"><span class="toc-number">3.</span> <span class="toc-text">Proposed indicator-based CHT</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#A-Motivation"><span class="toc-number">3.0.0.1.</span> <span class="toc-text">A.Motivation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#B-Cost-value-based-distance"><span class="toc-number">3.0.0.2.</span> <span class="toc-text">B.Cost value based distance</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Theorem-1%EF%BC%9A%E5%87%BD%E6%95%B0%E6%8B%A5%E6%9C%89%E4%B8%8B%E5%88%97%E6%80%A7%E8%B4%A8"><span class="toc-number">3.0.0.2.1.</span> <span class="toc-text">Theorem 1：函数拥有下列性质</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -484,19 +507,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PIL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">NLP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">PIL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -520,15 +543,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">毕设</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">TSMC</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Tensorflow</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">毕设</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -552,6 +575,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">constrained multi-objective evolutionary algorithms</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">constrained multi-objective optimization problems</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">constraint handling</a>
               </li>
              
@@ -568,15 +599,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">constrained multi-objective evolutionary algorithms</a>
+                <a href="javascript:void(0)" class="js-tag color5">EVCO</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">constrained multi-objective optimization problems</a>
+                <a href="javascript:void(0)" class="js-tag color2">Hypervolume indicator</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">multi-objective evolutionary algorithms</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Monte Carlo sampling</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -667,7 +702,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">NEU</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">NEU-SAPI</div>
   	  	
     	</section>
     
